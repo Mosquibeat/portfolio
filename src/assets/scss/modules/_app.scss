@@ -5,6 +5,11 @@ body {
 }
 
 h1 {
+	
+	&.title {
+		margin: 2.0rem 0;
+	}
+	
 	font-weight: 300;
 	font-size: 3rem;
 }
