@@ -10,6 +10,7 @@ import {About} from './components/about/about';
   pipes: [],
   directives: [ROUTER_DIRECTIVES],
   templateUrl: 'app/app.html',
+  styles: [require('assets/scss/style.scss')]
 })
 @RouteConfig([
   { path: '/home',       component: Home,        name: 'Home', useAsDefault: true },
