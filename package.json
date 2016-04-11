@@ -18,6 +18,7 @@
     "css-loader": "^0.23.1",
     "es6-promise": "3.0.2",
     "es6-shim": "0.35.0",
+    "html-webpack-plugin": "^2.15.0",
     "node-sass": "^3.4.2",
     "raw-loader": "^0.5.1",
     "reflect-metadata": "0.1.2",
@@ -27,13 +28,14 @@
     "typings": "^0.7.9",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.8.4"
+    "webpack-merge": "^0.8.4",
+    "source-map-loader": "^0.1.5"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.11",
+    "angular2": "2.0.0-beta.14",
     "core-js": "^2.2.0",
     "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.6.4"
+    "zone.js": "~0.6.10"
   },
   "keywords": [
     "Angular2",

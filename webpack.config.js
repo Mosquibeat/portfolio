@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 // Webpack Config
@@ -27,27 +28,15 @@ var webpackConfig = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: 'raw-loader!sass-loader'
-      }
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader',
+      },
     ]
   }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Our Webpack Defaults
 var defaultConfig = {
@@ -59,8 +48,24 @@ var defaultConfig = {
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+        template: 'src/index.html'
+      })
+  ],
 
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'source-map-loader',
+        exclude: [
+          // these packages have problems with their sourcemaps
+          path.join(__dirname, 'node_modules', 'rxjs'),
+          path.join(__dirname, 'node_modules', '@angular2-material'),
+        ]
+      }
+    ],
     noParse: [
       path.join(__dirname, 'node_modules', 'zone.js', 'dist'),
       path.join(__dirname, 'node_modules', 'angular2', 'bundles')

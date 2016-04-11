@@ -4,7 +4,7 @@ import {Http} from 'angular2/http';
 
 @Component({
   selector: 'about',
-  templateUrl: 'app/components/about/about.html',
+  template: require('app/components/about/about.html'),
   styles: [require('./about.scss')],
   providers: [],
   directives: [],
